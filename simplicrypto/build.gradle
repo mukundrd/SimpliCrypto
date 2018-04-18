@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def siteUrl = 'https://gitlab.com/Trayis/SimpliCrypto'      // Homepage URL of the library
-def gitUrl = 'https://gitlab.com/Trayis/SimpliCrypto.git'   // Git repository URL
+def siteUrl = 'https://gitlab.com/Trayis/SimpliCrypto'     // Homepage URL of the library
+def gitUrl = 'https://gitlab.com/Trayis/SimpliCrypto.git'  // Git repository URL
 
 android {
     compileSdkVersion 27
