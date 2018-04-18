@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SimpliCrypto</string>
+    <string name="enable">Enable</string>
+    <string name="decrypt">Decrypt</string>
+</resources>
