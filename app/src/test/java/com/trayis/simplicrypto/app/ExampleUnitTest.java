@@ -1,4 +1,4 @@
-package com.trayis.simplicrypto;
+package com.trayis.simplicrypto.app;
 
 import org.junit.Test;
 

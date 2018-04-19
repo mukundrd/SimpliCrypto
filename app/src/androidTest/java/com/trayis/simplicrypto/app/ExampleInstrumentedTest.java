@@ -1,4 +1,4 @@
-package com.trayis.simplicrypto;
+package com.trayis.simplicrypto.app;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

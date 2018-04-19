@@ -28,6 +28,11 @@ android {
         }
     }
 
+    lintOptions {
+        disable 'InvalidPackage'
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -40,7 +45,7 @@ dependencies {
 }
 
 group = 'com.trayis'    // Maven Group ID for the artifact
-version = '0.1.0'       // This is the library version used when deploying the artifact
+version = '0.1.1'       // This is the library version used when deploying the artifact
 
 install {
     repositories.mavenInstaller {
@@ -83,6 +88,13 @@ task sourcesJar(type: Jar) {
 
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+afterEvaluate {
+    javadoc.classpath += files(android.libraryVariants.collect { variant ->
+        variant.javaCompiler.classpath.files
+    })
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
