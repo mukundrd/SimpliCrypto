@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.trayis.simplicrypto.CryptoException;
@@ -41,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
             "      \"username\": \"Mukund Desai\"\n" +
             "    }";
 
-    private UserModel mUserModel;
-
     private Cryptography mCryptography;
 
     @Override
@@ -72,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences preferences = getPreferences(MODE_PRIVATE);
                 String string = preferences.getString(USER_DATA, null);
                 String text = mCryptography.decrypt(string);
-                mUserModel = GSON.fromJson(text, UserModel.class);
+                UserModel userModel = GSON.fromJson(text, UserModel.class);
+                Toast.makeText(MainActivity.this, userModel.toString(), Toast.LENGTH_SHORT).show();
             } catch (CryptoException e) {
                 Log.e(TAG, e.getMessage(), e);
             }

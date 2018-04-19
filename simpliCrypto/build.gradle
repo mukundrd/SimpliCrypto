@@ -30,7 +30,6 @@ android {
 
     lintOptions {
         disable 'InvalidPackage'
-
         abortOnError false
     }
 
@@ -46,7 +45,7 @@ dependencies {
 }
 
 group = 'com.trayis'    // Maven Group ID for the artifact
-version = '0.1.0'       // This is the library version used when deploying the artifact
+version = '0.1.1'       // This is the library version used when deploying the artifact
 
 install {
     repositories.mavenInstaller {
