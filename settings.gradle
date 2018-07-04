@@ -1,1 +1,1 @@
-include ':app', ':simpliCrypto'
+include ':app', ':simpliCrypt'
