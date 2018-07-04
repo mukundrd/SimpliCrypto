@@ -26,7 +26,7 @@ android {
 
     dependencies {
 
-        implementation project(":simpliCrypt")
+        implementation project(":simpliCrypto")
         //implementation "com.trayis:simplicrypto:0.1.0"
 
         implementation "com.google.code.gson:gson:2.8.2"
