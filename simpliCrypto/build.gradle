@@ -82,20 +82,20 @@ install {
     }
 }
 
+afterEvaluate {
+    javadoc.classpath += files(android.libraryVariants.collect { variant ->
+        variant.javaCompiler.classpath.files
+    })
+}
+
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
 
 task javadoc(type: Javadoc) {
+    excludes = ['**/*.kt']
     source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-afterEvaluate {
-    javadoc.classpath += files(android.libraryVariants.collect { variant ->
-        variant.javaCompiler.classpath.files
-    })
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
@@ -107,6 +107,7 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
+
 
 bintray {
     def file = new File('local.properties')
