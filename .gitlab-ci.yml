@@ -11,8 +11,7 @@ before_script:
   - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
   - unzip android-sdk.zip -d android-sdk-linux
   - mkdir android-sdk-linux/licenses || true
-  - printf "d56f5187479451eabf01fb78af6dfcb131a6481e" > android-sdk-linux/licenses/android-sdk-license
-  - printf "d975f751698a77b662f1254ddbeed3901e976f5a" > android-sdk-linux/licenses/android-sdk-preview-license
+  - printf "24333f8a63b6825ea9c5514f83c2829b004d1fee" > android-sdk-linux/licenses/android-sdk-license
   - android-sdk-linux/tools/bin/sdkmanager --list
   - android-sdk-linux/tools/bin/sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}" "build-tools;${ANDROID_BUILD_TOOLS}" > platform_log.txt
   - export ANDROID_HOME=$PWD/android-sdk-linux
